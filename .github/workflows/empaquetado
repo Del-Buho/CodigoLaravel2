@@ -1,0 +1,13 @@
+  
+name: Empaquetamiento
+on: [push]
+jobs:
+  prueba:
+    name: prueba 
+    runs-on: [ubuntu-latest]
+    steps:
+      - uses: actions/checkout@v1
+      - run: mkdir Senasag-zip
+      - uses: montudor/action-zip@v0.1.0
+        with:
+          args: zip -qq -r -vl ./Senasag-zip/Senasag.zip ./Senasag
